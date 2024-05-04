@@ -1,0 +1,254 @@
+.foodstand-con,
+.foodstand-con-- {
+    width: 100%;
+    height: 100%;
+}
+
+.foodstand-con-- {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.standForFst {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.standForSec {
+    padding: 0;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.standForSec-- {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.standImgMid {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.standImgMid-- {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.standImgBtm {
+    margin-bottom: 4.5rem;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.standImgBtm-- {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.standForTrd {
+    height: 100%;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.standForFth {
+    padding: 0;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.standForFth-- {
+    height: 100%;
+    display: grid;
+    justify-content: start;
+    align-content: space-between;
+    justify-items: end;
+    margin-left: 3.5rem;
+}
+
+.showfood {
+    width: 65%;
+    height: 83%;
+    position: relative;
+    margin-right: 2.5rem;
+    margin-bottom: 4rem;
+    padding: 0;
+    display: inline-block;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.showfood[data-scroll="in"] {
+    transition-delay: 0.5s;
+    transform: scaleX(1);
+}
+
+.showfood::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    transform-origin: top;
+    transition: 1s;
+}
+
+.foodintroduce-con {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.middlecat {
+    margin-top: 4rem;
+}
+
+.stand-triangle {
+    width: 2rem;
+}
+
+.welcomeText {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.curtain {
+    width: 17rem;
+    margin-top: 3rem;
+}
+
+.lantern {
+    width: 2.5rem;
+}
+
+.cat {
+    width: 13rem;
+    transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.cat:hover {
+    transform: rotate(15deg);
+    transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.standtable {
+    width: 14rem;
+}
+
+.table-box {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: black;
+}
+
+.table-box01 {
+    margin-left: 5rem;
+}
+
+.table-box02 {
+    margin-right: 5rem;
+}
+
+.foodicon {
+    width: 2.5rem;
+}
+
+h4.foodintro {
+    font-size: 1rem;
+    margin: 0;
+}
+
+p.foodintro {
+    font-size: 0.6rem;
+}
+
+.animate__rightswing {
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: rightswing;
+    animation-name: rightswing;
+}
+
+
+@keyframes rightswing{
+    20% {
+        -webkit-transform: rotate(-15deg);
+        transform: rotate(-15deg);
+    }
+    40% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    60% {
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    80% {
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.leftlantern:hover,
+.rightlantern:hover {
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-animation-name: swing;
+    animation-name: smallswing;
+}
+
+@keyframes smallswing{
+    20% {
+        -webkit-transform: rotate(4deg);
+        transform: rotate(4deg);
+    }
+    40% {
+        -webkit-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+    }
+    60% {
+        -webkit-transform: rotate(2deg);
+        transform: rotate(2deg);
+    }
+    80% {
+        -webkit-transform: rotate(-1deg);
+        transform: rotate(-1deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}

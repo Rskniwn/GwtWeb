@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.43 75.6">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0f0f0f;
+      }
+
+      .cls-1:hover {
+        fill: rgb(255, 145, 0);
+      }
+
+
+    </style>
+  </defs>
+  <rect class="cls-1" y="9.37" width="27.43" height="56.86" rx="8.51" ry="8.51"/>
+  <rect class="cls-1" x="5.48" y="70.02" width="16.47" height="5.58"/>
+  <rect class="cls-1" x="5.48" width="16.47" height="5.58"/>
+</svg>

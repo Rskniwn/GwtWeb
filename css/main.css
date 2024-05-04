@@ -1,0 +1,463 @@
+#section-main{
+    scroll-behavior: smooth;
+}
+
+#section-main::-webkit-scrollbar {
+    width: 0.3rem;
+}
+
+#section-main::-webkit-scrollbar-thumb {
+    height: 25rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(0deg, blue 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+body {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='30 20 70 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dddddd' fill-opacity='0.48'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.section-container {
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+
+.page {
+    height: 100vh;
+    scroll-snap-align: center;
+    display: flex;
+    position: relative;
+}
+
+nav.navbar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(0.2rem);
+    position: fixed;
+    display: flex;
+    z-index: 999;
+}
+
+
+/*設置動態漢堡選單 Strat*/
+
+.navbar-toggler {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    transition: .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+
+.toggler-icon {
+    display: block;
+    position: absolute;
+    height: 0.15rem;
+    width: 100%;
+    background: black;
+    border-radius: 0.5rem;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.middle-bar {
+    margin-top: 0px;
+}
+
+
+/* 當 navigation 被點擊 */
+
+.navbar-toggler .top-bar {
+    margin-top: 0px;
+    transform: rotate(135deg);
+}
+
+.navbar-toggler .middle-bar {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+    margin-top: 0px;
+    transform: rotate(-135deg);
+}
+
+
+/* State when the navbar is collapsed */
+
+.navbar-toggler.collapsed .top-bar {
+    margin-top: -1rem;
+    transform: rotate(0deg);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+    margin-top: 1rem;
+    transform: rotate(0deg);
+}
+
+
+/*設置動態漢堡選單 End*/
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+li.under-line,
+a.under-line {
+    position: relative;
+}
+
+a.under-line:after {
+    content: "";
+    position: absolute;
+    background-color: blue;
+    height: 0.1rem;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+li.under-line:after {
+    content: "";
+    position: absolute;
+    background-color: blue;
+    height: 0.1rem;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+a.Link-one:after {
+    content: "";
+    position: absolute;
+    background-color: blue;
+    height: 0.1rem;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    top: 2.5rem;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+a.Link-two:after {
+    content: "";
+    position: absolute;
+    background-color: blue;
+    height: 0.1rem;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    top: 5rem;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+a.Link-trd:after {
+    content: "";
+    position: absolute;
+    background-color: blue;
+    height: 0.1rem;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    top: 7.5rem;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.dropdown:after,
+.dropbtn:after {
+    content: "";
+    position: absolute;
+    background-color: blue;
+    height: 0.1rem;
+    width: 0;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+li.under-line:hover:after,
+a.under-line:hover:after,
+a.Link-one:hover:after,
+a.Link-two:hover:after,
+a.Link-trd:hover:after,
+.dropbtn:hover:after {
+    width: 100%;
+}
+
+.dropdown:hover:after {
+    width: 100%;
+}
+
+.navbar-nav .dropdown-menu {
+    position: absolute;
+}
+
+.dropdown-menu.show {
+    width: -webkit-fill-available;
+}
+
+.dropdown-menu {
+    background-color: rgba(255, 255, 255);
+    border: 0;
+    border-radius: 0;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 4rem;
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    color: var(--bs-nav-link-color);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255);
+    width: -webkit-fill-available;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--bs-nav-link-color);
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+a.Link-one:hover,
+a.Link-two:hover,
+a.Link-trd:hover,
+.dropbtn:hover {
+    color: var(--bs-nav-link-hover-color);
+}
+
+.for-img {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 3rem;
+    height: 100%;
+}
+
+
+/* .for-img.food-Title {
+    justify-content: space-between;
+} */
+
+.ghostwire02 {
+    margin-top: 8rem;
+    margin-right: 15rem;
+}
+
+
+/*CSS動畫*/
+
+.ghostwire-h1 {
+    width: 18.5rem;
+    height: 25rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ghostwire-h1[data-scroll="in"] {
+    transition-delay: 0.2s;
+    transform: scaleX(1);
+}
+
+.ghostwire-h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    transform-origin: bottom;
+    transition: 1s;
+}
+
+.ghostwire02-h1 {
+    width: 18rem;
+    height: 25rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 0C6.716 0 0 6.716 0 15c8.284 0 15-6.716 15-15zM0 15c0 8.284 6.716 15 15 15 0-8.284-6.716-15-15-15zm30 0c0-8.284-6.716-15-15-15 0 8.284 6.716 15 15 15zm0 0c0 8.284-6.716 15-15 15 0-8.284 6.716-15 15-15z' fill='%23cccccc' fill-opacity='0.23' fill-rule='evenodd'/%3E%3C/svg%3E"); */
+}
+
+.ghostwire02-h1[data-scroll="in"] {
+    transition-delay: 0.5s;
+    transform: scaleX(1);
+}
+
+.ghostwire02-h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: blue;
+    transform-origin: bottom;
+    transition: 1s;
+}
+
+
+/*CSS動畫*/
+
+.twitter-text {
+    display: flex;
+    text-align: end;
+    margin-bottom: 3rem;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.twitter-text h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.verticalRl {
+    writing-mode: vertical-rl;
+}
+
+.ghostwire,
+.ghostwire02 {
+    display: flex;
+}
+
+.ghostwire {
+    margin-right: 1.5rem;
+}
+
+.ghostwire-h3 {
+    font-size: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 0;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.ghostwire-p {
+    margin-top: 0;
+    margin-left: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.ghostwire-p2 {
+    margin-top: 8rem;
+    margin-left: 0.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+
+/* ghostwire02 的設置 */
+
+.ghostwire02-h3 {
+    font-size: 3rem;
+    margin-left: 1.5rem;
+    margin-right: 0;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.ghostwire02-p {
+    margin-top: 0;
+    margin-left: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.ghostwire02-p2 {
+    margin-top: 2.5rem;
+    margin-left: 0.3rem;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+
+/* ghostwire02 的設置 */
+
+.p-div {
+    height: 100%;
+    display: flex;
+    align-items: start;
+}
+
+
+/* .progressbar {
+    top: 5.1rem;
+    right: 18.7rem;
+    display: flex;
+    position: absolute;
+    width: 0.3rem;
+    height: 55rem;
+    background-color: aqua;
+    transform-origin: top;
+    transition: 1s;
+} */
+
+.animate__delay{
+    animation-delay: 0.2s;
+}

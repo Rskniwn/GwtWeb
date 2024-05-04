@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.42 64.72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0f0f0f;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" y="2.1" width="152.42" height="5.71"/>
+  <polygon class="cls-1" points="130.21 15.46 130.21 64.72 95.28 64.72 95.28 50.72 92.38 50.72 92.38 64.72 60.5 64.72 60.5 50.72 57.61 50.72 57.61 64.72 23.58 64.72 23.58 15.46 130.21 15.46"/>
+  <rect class="cls-1" x="23.58" width="8.67" height="18.84"/>
+  <rect class="cls-1" x="71.88" width="8.67" height="18.84"/>
+  <rect class="cls-1" x="121.53" width="8.67" height="18.84"/>
+</svg>
